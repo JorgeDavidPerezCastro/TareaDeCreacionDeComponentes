@@ -1,5 +1,6 @@
 package Problema1;
 import java.awt.Container;
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -12,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class Problema1 extends JFrame implements ActionListener{
-	private JTextField velocidadcampo;
+	private JTextField velocidadcampo; 
 	private JTextField distanciacampo;
 	private JTextField tiempocampo;
 	
@@ -34,50 +35,60 @@ public class Problema1 extends JFrame implements ActionListener{
 		contenedorprincipal.setLayout(new GridBagLayout());
 		GridBagConstraints restricciones = new GridBagConstraints();
 		
-		JLabel velocidadtxt = new JLabel("Velocidad: ");
+		JLabel informacion1txt = new JLabel("Para calcular el valor de Velocidad, Distancia y Tiempo. ");
 		restricciones.gridx = 0;
 		restricciones.gridy = 0;
+		contenedorprincipal.add(informacion1txt,restricciones);
+		
+		JLabel informacion2txt = new JLabel("Deja vacio el cuadro del respectivo valor. ");
+		restricciones.gridx = 1;
+		restricciones.gridy = 0;
+		contenedorprincipal.add(informacion2txt,restricciones);
+		
+		JLabel velocidadtxt = new JLabel("Velocidad: ");
+		restricciones.gridx = 0;
+		restricciones.gridy = 1;
 		contenedorprincipal.add(velocidadtxt,restricciones);
 		
 		velocidadcampo = new JTextField();
 		restricciones.gridx = 1;
-		restricciones.gridy = 0;
-		restricciones.ipadx = 100;
+		restricciones.gridy = 1;
+		restricciones.ipadx = 200;
 		restricciones.ipady = 10;
 		contenedorprincipal.add(velocidadcampo,restricciones);
 		
 		JLabel distanciatxt = new JLabel("Distancia: ");
 		restricciones.gridx = 0;
-		restricciones.gridy = 1;
+		restricciones.gridy = 2;
 		restricciones.ipadx = 0;
 		restricciones.ipady = 0;
 		contenedorprincipal.add(distanciatxt,restricciones);
 		
 		distanciacampo = new JTextField();
 		restricciones.gridx = 1;
-		restricciones.gridy = 1;
-		restricciones.ipadx = 100;
+		restricciones.gridy = 2;
+		restricciones.ipadx = 200;
 		restricciones.ipady = 10;
 		contenedorprincipal.add(distanciacampo,restricciones);
 		
 		JLabel tiempotxt = new JLabel("Tiempo: ");
 		restricciones.gridx = 0;
-		restricciones.gridy = 2;
+		restricciones.gridy = 3;
 		restricciones.ipadx = 0;
 		restricciones.ipady = 0;
 		contenedorprincipal.add(tiempotxt,restricciones);
 		
 		tiempocampo = new JTextField();
 		restricciones.gridx = 1;
-		restricciones.gridy = 2;
-		restricciones.ipadx = 100;
+		restricciones.gridy = 3;
+		restricciones.ipadx = 200;
 		restricciones.ipady = 10;
 		contenedorprincipal.add(tiempocampo,restricciones);
 		
 		JButton calcular = new JButton("Calcular");
 		restricciones.gridx = 1;
-		restricciones.gridy = 3;
-		restricciones.ipadx = 22;
+		restricciones.gridy = 4;
+		restricciones.ipadx = 120;
 		restricciones.ipady = 0;
 		contenedorprincipal.add(calcular,restricciones);
 		calcular.setActionCommand("Calculando");
@@ -103,13 +114,13 @@ public class Problema1 extends JFrame implements ActionListener{
 		boolean tiempoboolean = false;
 		
 		if (comando.equals("Calculando")){
-			if(velocidadcampo.getText().contentEquals("")){
+			if(velocidadcampo.getText().contains("")){
 				velocidadboolean = true;
 			}
-			if(distanciacampo.getText().contentEquals("")){
+			if(distanciacampo.getText().contains("")){
 				distanciaboolean = true;
 			}
-			if(tiempocampo.getText().contentEquals("")){
+			if(tiempocampo.getText().contains("")){
 				tiempoboolean = true;
 			}
 			
